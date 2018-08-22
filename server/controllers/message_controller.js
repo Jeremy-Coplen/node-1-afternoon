@@ -7,9 +7,10 @@ module.exports = {
     },
 
     create: (req, res) => {
-        const {text, time} = req.body
+        const {name, text, time} = req.body
         const message = {
             id,
+            name,
             text,
             time
         }
@@ -28,6 +29,7 @@ module.exports = {
         })
         messages[messageID] = {
             id: messages[messageID].id,
+            name: messages[messageID].name,
             text: text || messages[messageID].text,
             time: time || messages[messageID].time
         }
